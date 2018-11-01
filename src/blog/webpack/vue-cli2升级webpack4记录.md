@@ -1,6 +1,7 @@
 # vue-cli2升级webpack4记录
 ## 目录结构分析，找出配置文件
 这个项目是由vue-cli2生成的，我们先来看看现有的目录结果，找出我们需要改代码的地方，打开各文件查看，找到我们需要修改文件的地方存于放build和config两个目录下：
+
 ![image](./images/vue_file_tree.png)
 
 这次我们修改的js文件主要有以下三个：
@@ -151,9 +152,11 @@ public: proxyConfig.cookieDomain || internalIp.v4.sync(),
 ...
 ```
 再启动服务，服务启动成功:
+
 ![image](./images/webpack3ok.png)
 
 开发环境的webpack配置升级完毕，首页成功启动:
+
 ![image](./images/webpack3ok2.png)
 
 

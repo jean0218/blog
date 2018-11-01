@@ -16,5 +16,7 @@
 ### react
 ### vue
 ### CI
+### webpack
+【总结】[vue-cli2升级webpack4记录](./src/blog/webpack/vue-cli2升级webpack4记录.md)
 
 

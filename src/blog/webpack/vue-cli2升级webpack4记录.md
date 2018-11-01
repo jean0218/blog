@@ -1,8 +1,8 @@
 # vue-cli2升级webpack4记录
 ## 目录结构分析，找出配置文件
 这个项目是由vue-cli2生成的，我们先来看看现有的目录结果，找出我们需要改代码的地方，打开各文件查看，找到我们需要修改文件的地方存于放build和config两个目录下：
+![image](./images/vue_file_tree.png)
 
-图
 这次我们修改的js文件主要有以下三个：
 - ./build/webpack.dev.conf.js
 - ./build/webpack.prod.conf.js
@@ -119,7 +119,7 @@ mode: 'development',
 
 我们再次编译项目，出现了新的报错
 
-图1
+![image](./images/webpack301.png)
 
 我们在./build/webpack.dev.conf中，找到报错提示中的代码位置:
 ```js
@@ -150,9 +150,14 @@ cookieDomainRewrite: proxyConfig.cookieDomain || internalIp.v4.sync(),
 public: proxyConfig.cookieDomain || internalIp.v4.sync(),
 ...
 ```
-再启动服务，服务启动成功，开发环境的webpack配置升级完毕，首页成功启动:
+再启动服务，服务启动成功:
+![image](./images/webpack3ok.png)
 
-## 升级生产环境
+开发环境的webpack配置升级完毕，首页成功启动:
+![image](./images/webpack3ok2.png)
+
+
+## 升级生产环境(未完，待补充)
 测试环境的升级成功，我们再运行一下生产环境的配置npm run build
 ```js
 > laimi-backend@1.0.2 build E:\work\laimi-front\laimi-bk

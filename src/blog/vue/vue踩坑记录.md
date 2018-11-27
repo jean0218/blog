@@ -76,7 +76,8 @@ render(h) {
 
 我先复现一下BUG：
 
-A网站，从首页a.com进入登录页a.com/login,正常，能正确打开页面
+A网站，从首页a.com进入登录页a.com/login，正常，能正确打开页面。
+
 刷新login路由就出现报错：
 
 ![image](./images/vue01.png)
@@ -92,9 +93,9 @@ A网站，从首页a.com进入登录页a.com/login,正常，能正确打开页�
 仔细查看加载的js，a.com/login路由下只加载了当前路由的js，公共的JS没有了。
 
 
-我们来分析一下引起这个问题，该问题出现在生产环境，我们需要更改的文件就是在webpack.prod.config.js。有可能出现在哪些配置项
-CommonsChunkPlugin：配置按需加载
-HtmlWebpackPlugin：模板生成单页面或多页面
+我们来分析一下引起这个问题，该Bug暴露在生产环境，我们需要更改的文件就是在webpack.prod.config.js。那它有可能是哪些配置项引起的呢？
+- CommonsChunkPlugin：配置按需加载
+- HtmlWebpackPlugin：模板生成单页面或多页面
 
 查看了下两者配置：
 ```js

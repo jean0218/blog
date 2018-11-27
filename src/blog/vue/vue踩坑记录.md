@@ -1,3 +1,4 @@
+
 # vue踩坑记录
 ### 绑值
 绑定值
@@ -78,17 +79,17 @@ render(h) {
 A网站，从首页a.com进入登录页a.com/login,正常，能正确打开页面
 刷新login路由就出现报错：
 
-![image](./images01.png)
+![image](./images/vue01.png)
 
-重新加载页面查看生成的html结构，a.com 页面：(请忽略前面的JS，这项目不是我配置的....)
+重新加载页面查看生成的html结构，a.com页面：(请忽略前面的JS，这项目不是我配置的....)
 
-![image](./images02.png)
+![image](./images/vue02.png)
 
 加载a.com/login,再刷新，js显示如下：
 
-![image](./images03.png)
+![image](./images/vue03.png)
 
-仔细查看加载的js，a.com/login 路由下只加载了当前路由的js，公共的JS没有了。
+仔细查看加载的js，a.com/login路由下只加载了当前路由的js，公共的JS没有了。
 
 
 我们来分析一下引起这个问题，该问题出现在生产环境，我们需要更改的文件就是在webpack.prod.config.js。有可能出现在哪些配置项
@@ -146,7 +147,7 @@ HtmlWebpackPlugin：模板生成单页面或多页面
 都没什么大问题，都是按的默认配置，再运行一下编译命令：npm run build
 这个时候，就发现问题了，说好的SPA呢？为什么这么多的文件夹，每一个都有文件html文件
 
-![image](./images04.png)
+![image](./images/vue04.png)
 
 这些html文件是哪里来的，找啊找,在文件中找到了这么一段配置文件
 ```js
